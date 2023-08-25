@@ -1,4 +1,6 @@
 
+![Capture1](https://github.com/Paulinelali/vet-clinic-project/assets/88007635/d1872926-07a7-4131-9b09-64fca7b4b39c)
+
 
 <a name="readme-top"></a>
 
