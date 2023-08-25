@@ -15,11 +15,7 @@ SELECT date_of_birth FROM animals WHERE name IN ('Agumon', 'Pikachu');
 -- List name and escape attempts of animals that weigh more than 10.5kg
 SELECT name, escape_attempts FROM animals WHERE weight_kg > 10.5;
 
--- Find all animals that are neutered.
+/
 SELECT * FROM animals WHERE neutered = 'true';
-
--- Find all animals not named Gabumon.
 SELECT * FROM animals WHERE NOT name = 'Gabumon';
-
--- Find all animals with a weight between 10.4kg and 17.3kg (including the animals with the weights that equals precisely 10.4kg or 17.3kg)
 SELECT * FROM animals WHERE weight_kg BETWEEN '10.4' AND '17.3'; 
