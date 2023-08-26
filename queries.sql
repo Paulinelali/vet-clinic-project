@@ -26,6 +26,35 @@ SELECT * FROM animals WHERE weight_kg BETWEEN '10.4' AND '17.3';
 
 -- DAY - 2
 
+-- Inside a transaction update the animals table by setting the species column to unspecified.
+BEGIN UPDATE animals SET species = 'unspecified';
+
+-- Verify that change was made.
+SELECT * FROM animals;
+
+-- Then roll back the change and verify that the species columns went back to the state before the transaction
+ROLLBACK;
+
+-- Update the animals table by setting the species column to digimon for all animals that have a name ending in mon.
+BEGIN UPDATE animals SET species = 'digimon' WHERE name ILIKE '%mon';
+
+-- Update the animals table by setting the species column to pokemon for all animals that don't have species already set.
+UPDATE animals SET species = 'pokemon' WHERE NOT name ILIKE '%mon';
+
+-- Verify that changes were made.
+SELECT * FROM animals;
+
+-- Commit the transaction.
+COMMIT;
+
+-- Verify that changes persist after commit.
+  -- I opened a new shell to verify
+
+-- delete all records in the animals table, then roll back the transaction
+BEGIN TRUNCATE animals;
+ROLLBACK;
+SELECT * FROM animals;
+
 -- Delete all animals born after Jan 1st, 2022.
 BEGIN DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 
@@ -33,14 +62,15 @@ BEGIN DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 SAVEPOINT sp1;
 
 -- Update all animals' weight to be their weight multiplied by -1.
-SET weight_kg = weight_kg * -1;
+UPDATE animals SET weight_kg = weight_kg * -1;
 
 -- Rollback to the savepoint
 ROLLBACK TO sp1;
 
 -- Update all animals' weights that are negative to be their weight multiplied by -1.
-UPDATE animals SET weight_kg = weight_kg *-1 WHERE weight_kg < 1;
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 1;
 
+-- Commit transaction
 COMMIT;
 
 -- How many animals are there?
