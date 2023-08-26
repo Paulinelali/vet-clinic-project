@@ -14,16 +14,16 @@ VALUES ('Devimon', DATE '2017-05-12', '5', 'true', '11.00');
 -- day - 2
 
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
-VALUES ('Charmander', DATE '2020-02-08', '0', 'false', '11.00');
+VALUES ('Charmander', DATE '2020-02-08', '0', 'false', '-11.00');
 
 INSERT INTO animals ( name, date_of_birth, escape_attempts, neutered, weight_kg)
-VALUES ('Plantmon', DATE '2021-11-15', '2', 'true', '5.70');
+VALUES ('Plantmon', DATE '2021-11-15', '2', 'true', '-5.70');
 
 INSERT INTO animals ( name, date_of_birth, escape_attempts, neutered, weight_kg)
-VALUES ('Squirtle', DATE '1993-04-02', '3', 'false', '12.13');
+VALUES ('Squirtle', DATE '1993-04-02', '3', 'false', '-12.13');
 
 INSERT INTO animals ( name, date_of_birth, escape_attempts, neutered, weight_kg)
-VALUES ('Angemon', DATE '2005-06-12', '1', 'true', '45');
+VALUES ('Angemon', DATE '2005-06-12', '1', 'true', '-45');
 
 INSERT INTO animals ( name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES ('Boarmon', DATE '2005-06-07', '7', 'true', '20.4');
